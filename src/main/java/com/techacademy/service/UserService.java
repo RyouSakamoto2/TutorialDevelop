@@ -20,6 +20,12 @@ public class UserService {
         // リポジトリのfindAllメソッドを呼び出す
         return userRepository.findAll();
     }
+
+    /** Userを1件検索して返す */
+    public User getUser(Integer id) {
+        return userRepository.findById(id).get();
+    }
+
     @Transactional
     public User saveUser(User user) {
         return userRepository.save(user);
